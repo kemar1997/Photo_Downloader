@@ -6,6 +6,10 @@ from feed.models import FileIt
 from feed.forms import FileItForm
 
 # Create your views here.
+def home(request):
+    file_it = FileIt.objects.all()
+    return render(request, 'feed/home.html', { 'file_it': file_it })
+
 def upload(request):
     if request.method == 'POST' and request.FILES['myfile']:
         myfile = request.FILE['myfile']
