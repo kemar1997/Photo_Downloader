@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'ig_clone.feed',
+    'feed',
 ]
 
 MIDDLEWARE = [
