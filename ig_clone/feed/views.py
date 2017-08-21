@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
+from django.contrib.auth.decorators import login_required
 
 from feed.models import FileIt
 from feed.forms import FileItForm
@@ -10,6 +11,7 @@ def home(request):
     file_it = FileIt.objects.all()
     return render(request, 'feed/home.html', { 'file_it': file_it })
 
+# @login_required
 def upload(request):
     if request.method == 'POST' and request.FILES['myfile']:
         myfile = request.FILES['myfile']
